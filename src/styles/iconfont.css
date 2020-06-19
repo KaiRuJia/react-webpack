@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'icon-biaoqian';  /* project id 1702022 */
+  src: url('//at.alicdn.com/t/font_1702022_3x2e1iun1hg.eot');
+  src: url('//at.alicdn.com/t/font_1702022_3x2e1iun1hg.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1702022_3x2e1iun1hg.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1702022_3x2e1iun1hg.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1702022_3x2e1iun1hg.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1702022_3x2e1iun1hg.svg#iconfont') format('svg');
+}
+.icon-biaoqian {
+  font-family: 'icon-biaoqian';
+}
