@@ -20,12 +20,10 @@ module.exports = merge(common,{
         hot: true,
         historyApiFallback: true,
         proxy:{
-            '/proxy': {
-                target: 'http://your_api_server.com',
+            '/common/**/*.json': {
+                target: 'https://mock.yonyoucloud.com/mock/10603/',
                 changeOrigin: true,
-                pathRewrite: {
-                    '^/proxy': ''
-                }
+                secure: true
             }
         }
     },
