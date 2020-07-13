@@ -14,7 +14,7 @@ module.exports = merge(common,{
             poll: 1000, // 每秒 1000次  每隔（你设定的）多少时间查一下有没有文件改动过。不想启用也可以填false。
             ignored: /node_modules/ // 不需要监控的文件夹 观察许多文件系统会导致大量的CPU或内存使用量。可以排除一个巨大的文件夹
         },
-        host: 'localhost',
+        host: '0.0.0.0',
         port: 3000,
         open: true,
         hot: true,
