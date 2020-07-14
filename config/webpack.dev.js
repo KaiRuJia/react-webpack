@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
+const portfinder = require('portfinder')
 
 module.exports = merge(common,{
     mode: 'development',
@@ -15,10 +16,22 @@ module.exports = merge(common,{
             ignored: /node_modules/ // 不需要监控的文件夹 观察许多文件系统会导致大量的CPU或内存使用量。可以排除一个巨大的文件夹
         },
         host: '0.0.0.0',
-        port: 3000,
+        port: new Promise((resolve, reject) => {
+            portfinder.getPort({
+                port: 8080,
+                stopPort: 9000
+            },(err, port) => {
+                if(port) {
+                    resolve(port)
+                } else {
+                    reject(8081)
+                }
+            })
+        }),
         open: true,
-        hot: true,
-        historyApiFallback: true,
+        hot: true, //热加载
+        inline: true, // 实时刷新
+        historyApiFallback: true, // 不跳转
         proxy:{
             '/common/**/*.json': {
                 target: 'https://mock.yonyoucloud.com/mock/10603/',
